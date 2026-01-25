@@ -50,3 +50,159 @@
 //         return alert ("User not found")
 //     }
 // }
+
+
+// Напишіть функцію, яка сумуватиме сусідні числа
+// і пушитиме їх в новий масив.
+
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+// уточнення: складати необхідно перше число з другим, потім друге - з третім,
+// третє - з четвертим і так до кінця.
+// В результаті функція має повертати масив [33, 45, 39, 17, 25, 27, 29].
+
+
+const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+const newArr = [];
+let sum = 0;
+for (let i = 0; i < someArr.length - 1; i++) {
+
+    sum = someArr[i] + someArr[i + 1];
+    newArr.push(sum);
+    
+}
+console.log(newArr);
+
+
+// Напишіть функцію findSmallestNumber(numbers),
+// яка шукає найменше число в масиві.
+// Додайте перевірку, що функція отримує саме масив, і
+// якщо функція отримує масив - поверніть з функції найменше число,
+// в іншому випадку - поверніть 'Sory, it is not an array!'.
+
+const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+
+
+function findSmallestNumber(args) {
+    if (!Array.isArray(args)) {
+        console.log('Sory, it is not an array!');
+        return
+    }
+    console.log(Math.min(...args));
+    
+};
+
+findSmallestNumber(numbers);
+findSmallestNumber(4);
+
+// Напишіть функцію findLongestWord(string), яка
+// приймає довільний рядок, що складається лише зі слів, розділених
+// пробілами (параметр string), і повертатиме найдовше слово у реченні.
+
+// Скористайтесь цим прикладом виклику функції для перевірки її роботи:
+// console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+
+function findLongestWord(string) {
+    const array = string.split(" ");
+    console.log(array);
+    let theLongestWord = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (theLongestWord.length < array[i].length){
+        theLongestWord = array[i];
+            return theLongestWord;
+        } 
+    }
+};
+
+console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+
+
+// Напишіть скрипт, який для об'єкту user, послідовно:
+// 1 - додасть поле mood зі значенням 'happy',
+// 2 - замінить hobby на 'skydiving',
+// 3 - замінить значення premium на false,
+// 4 - виведе зміст об'єкта user у форматі
+// '<ключ>:<значення>' використовуя Object.keys() та for...of
+
+const user = {
+    name: "John",
+    age: 20,
+    hobby: "tenis",
+    premium: true,
+  };
+
+user.mood = "happy";
+user.hobby = "skydiving";
+user.premium = false;
+
+const keys = Object.keys(user);
+for (const key of keys) {
+    console.log(`${key}: ${user[key]}`);
+    
+};
+
+
+// Є об'єкт, в якому зберігаються зарплати команди
+// Напишіть код для додавання усіх зарплат та
+// збережіть його результат в змінній sum.
+// Якщо об'єкт salaries пустий, то результат має бути 0
+
+const salaries = {
+    Mango: 100,
+    Poly: 160,
+    Ajax: 1470,
+};
+  
+const zeroSalary = [];
+
+function sumAllSalaries (salaries) {
+    const allSalaries = Object.values(salaries);
+    let sum = 0;
+    for (const salary of allSalaries) {
+        sum += salary;
+        // console.log(sum); 
+    }
+    if (sum === 0) {
+        return 0;
+    };
+    return sum;
+}
+
+console.log(sumAllSalaries(salaries));
+console.log(sumAllSalaries(zeroSalary));
+
+
+// Створіть об'єкт calculator з наступними методами:
+// read(a, b) - приймає два аргумента і зберігає їх як властивості об'єкта,
+// sum() - повертає сумму збереженних значень (з перевіркою на наявність властивостей в об'єкті),
+// mult() - перемножає збереженні значення і повертає результат (з перевіркою на наявність властивостей в об'єкті),
+// винесіть перевірку на наявність властивостей в об'єкті в окремий метод exist().
+
+// Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
+// методи sum і mult мають повертати рядок 'No such propeties'
+
+const calculator = {
+    read(a, b) {
+        calculator.a;
+        calculator.b;
+    },
+    sum() {
+        const values = Object.values(calculator);
+        let sum = 0;
+        for (const value of values) {
+            sum += value;
+        }
+        return sum;
+    },
+    mult() {
+        const values = Object.values(calculator);
+        let mult = 0;
+        for (const value of values) {
+            mult *= value;
+        }
+    }
+    exist() {
+        
+
+    }
+}
