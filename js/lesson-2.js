@@ -40,16 +40,18 @@
 // Якщо ім'я є в масиві – виводить повідомлення через alert: "Welcome, <name>!"
 // Якщо ім'я відсутнє – виводить повідомлення: "User not found".
 
-// const logins = ["Peter", "John", "Igor", "Sasha"];
+const logins = ["Peter", "John", "Igor", "Sasha"];
 
-// function checkLogin(array) {
-//     let name = prompt("Please enter your name");
-//     if (array.includes(name)) {
-//     return alert (`Welcome, ${name}!`)
-//     } else {
-//         return alert ("User not found")
-//     }
-// }
+function checkLogin(array) {
+    let name = prompt("Please enter your name");
+    if (array.includes(name)) {
+    return alert (`Welcome, ${name}!`)
+    } else {
+        return alert ("User not found")
+    }
+}
+
+console.log(checkLogin(logins));
 
 
 // Напишіть функцію, яка сумуватиме сусідні числа
@@ -183,26 +185,61 @@ console.log(sumAllSalaries(zeroSalary));
 
 const calculator = {
     read(a, b) {
-        calculator.a;
-        calculator.b;
+        this.a = a;
+        this.b = b;
     },
     sum() {
-        const values = Object.values(calculator);
-        let sum = 0;
-        for (const value of values) {
-            sum += value;
+        if (this.exist() === true) {
+            const sum = this.a + this.b;
+            return sum;
+        } else {
+            return 'No such propeties';
         }
-        return sum;
     },
-    mult() {
-        const values = Object.values(calculator);
-        let mult = 0;
-        for (const value of values) {
-            mult *= value;
+    mult() { 
+            if(this.exist() === true) {
+            return this.a * this.b;
+        } else {
+            return 'No such propeties';
         }
-    }
+    },
     exist() {
-        
-
+        return this.a !== undefined && this.b !== undefined;
     }
 }
+
+
+// Напишіть функцію calcTotalPrice(fruits, fruitName),
+// яка приймає массив об'єктів (fruits) і рядок з назвою фрукта (fruitName).
+// Функція рахує і повертає загальну вартість фрукта
+// з таким ім'ям, ціною та кількістю з об'єкта.
+
+// Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою
+// назвою фрукта, це також треба урахувати.
+
+const fruits = [
+    { name: "Яблуко", price: 45, quantity: 7 },
+    { name: "Апельсин", price: 60, quantity: 4 },
+    { name: "Банан", price: 125, quantity: 8 },
+    { name: "Груша", price: 350, quantity: 2 },
+    { name: "Виноград", price: 440, quantity: 3 },
+    { name: "Банан", price: 125, quantity: 3 },
+  ];
+  
+
+function calcTotalPrice(fruits, fruitName) {
+    let total = 0;
+    for (const fruit of fruits) {
+        if (fruitName === fruit.name) {
+            const item = fruit.price * fruit.quantity;
+            total += item;
+        }
+        
+    }
+return total;
+}
+
+console.log(calcTotalPrice(fruits, "Банан"));
+
+
+
