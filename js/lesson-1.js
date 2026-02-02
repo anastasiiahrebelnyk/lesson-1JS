@@ -175,18 +175,18 @@
 // Виведіть в alert відповідне повідомлення, наприклад:
 // "10 входить в першу чверть"
 
-let min = Math.floor(Math.random() * 59);
-if (min > 45) {
-    alert(`${min} входить в четверту чверть`);
-} else if(min > 30) {
-    alert(`${min} входить в третю чверть`);
-} else if(min > 15) {
-    alert(`${min} входить в другу чверть`);
-} else {
-    alert(`${min} входить в першу чверть`);
-}
+// let min = Math.floor(Math.random() * 59);
+// if (min > 45) {
+//     alert(`${min} входить в четверту чверть`);
+// } else if(min > 30) {
+//     alert(`${min} входить в третю чверть`);
+// } else if(min > 15) {
+//     alert(`${min} входить в другу чверть`);
+// } else {
+//     alert(`${min} входить в першу чверть`);
+// }
 
-console.log(min);
+// console.log(min);
 
 
 //! ----------------------------------
@@ -205,6 +205,60 @@ console.log(min);
 
 
 
-let num = Numner(prompt('write number from 1 to 4'));
+// let num = Number(prompt('write a number from 1 to 4'));
+// let result;
+// switch (num) {
+//     case 1:
+//         result = 'зима';
+//         break;
+// case 2:
+//         result = 'весна';
+//         break;
+//     case 3:
+//         result = 'літо';
+//         break;
+//     case 4:
+//         result = 'осінь';
+//         break;
+//     default:
+//         result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно"
+//         break;
+// }
+// console.log(result);
+
+
+//! ----------------------------------
+
+// Завдання 4:
+
+// Отримуйте від користувача число (кількість хвилин) через prompt
+// і виводьте у консоль рядок у форматі годин та хвилин.
+// Приклад: користувач вводить в prompt '70' -> в консолі відобразиться '01:10'.
+// Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
+
+
+// let num = Number(prompt('Write minutes'));
+// if (num < 61) {
+//     console.log(`Time: ${num} min`);
+// } else {
+//     const hours = Math.floor(num / 60);
+//     let min = num - (hours * 60);
+//     if (min < 10) {
+//         min = String(min).padStart(2, "0");
+//     }
+
+//     console.log(`Time: ${hours}:${min}`);   
+
+// }
+
+//! ----------------------------------
+
+// function foo1(i) {
+//     console.log(i);
+//     foo1(i + 1);
+// };
+// foo1(1)
+
 
 //! ----------------------------------
