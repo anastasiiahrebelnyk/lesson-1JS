@@ -281,21 +281,22 @@
 // в іншому випадку вивести в alert рядок "Невірний пароль!"
 
 
-let login = prompt('login');
-let password;
-console.log(login);
-if (login === 'Адмін') {
-    password = prompt('password');
-if (password === 'Я головний') {
-    alert('Добрий день!');
-} else {
-    alert('Невірний пароль!')
-}
-} else if (login === '' || login === null) {
-    alert('Скасовано');
-} else {
-    alert('Я вас не знаю');
-}
+// let login = prompt('login');
+// let password;
+// console.log(login);
+// if (login === 'Адмін') {
+//     password = prompt('password');
+// if (password === 'Я головний') {
+//     alert('Добрий день!');
+// } else {
+//     alert('Невірний пароль!')
+// }
+// } else if (login === '' || login === null) {
+//     alert('Скасовано');
+// } else {
+//     alert('Я вас не знаю');
+// }
 
 
 //! ----------------------------------
+
